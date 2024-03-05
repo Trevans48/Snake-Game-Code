@@ -3,6 +3,8 @@ import "./App.css";
 import Snake from "./Snake";
 import display from "./display";
 import { useEffect } from "react";
+import Point from "./Point";
+import WorldModel from "./WorldModel"
 
 export default function App() {
   // Add Snake Tests with display below
@@ -10,30 +12,31 @@ export default function App() {
     // Include your display statements to test below
     document.getElementById("output")!.innerText = "OUTPUT:\n";
     display("hey");
-    const redSnake = new Snake("red");
-    const blueSnake = new Snake("blue");
+    let redSnake = new Snake("red");
+    let blueSnake = new Snake("blue");
+    const worldModel = new WorldModel(redSnake);
     redSnake.move(2);
-    blueSnake.turn();
+    blueSnake.turnLeft();
     redSnake.move(-6);
     blueSnake.move(4);
-    redSnake.turn();
-    blueSnake.turn();
+    redSnake.turnRight();
+    blueSnake.turnRight();
     redSnake.move(4);
     blueSnake.move(-2);
-    redSnake.turn();
-    blueSnake.turn();
+    redSnake.turnLeft();
+    blueSnake.turnLeft();
     redSnake.move(2);
     blueSnake.move(20);
-    redSnake.turn();
-    blueSnake.turn();
+    redSnake.turnRight();
+    blueSnake.turnRight();
     redSnake.move(-4);
     blueSnake.move(8);
-    redSnake.turn();
-    blueSnake.turn();
+    redSnake.turnLeft();
+    blueSnake.turnLeft();
     redSnake.move(2);
     blueSnake.move(-18);
-    redSnake.turn();
-    blueSnake.turn();
+    redSnake.turnRight();
+    blueSnake.turnRight();
     redSnake.move(-4);
     blueSnake.move(-4);
     display(
