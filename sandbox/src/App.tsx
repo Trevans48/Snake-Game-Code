@@ -14,7 +14,7 @@ export default function App() {
     display("hey");
     let redSnake = new Snake("red");
     let blueSnake = new Snake("blue");
-    const worldModel = new WorldModel(redSnake);
+    const worldModel = new WorldModel(redSnake, 400, 400);
     redSnake.move(2);
     blueSnake.turnLeft();
     redSnake.move(-6);
